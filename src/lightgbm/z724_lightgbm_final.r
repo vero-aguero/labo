@@ -16,19 +16,19 @@ require("lightgbm")
 #defino los parametros de la corrida, en una lista, la variable global  PARAM
 #  muy pronto esto se leera desde un archivo formato .yaml
 PARAM <- list()
-PARAM$experimento  <- "KA7240"
+PARAM$experimento  <- "KA7241"
 
 PARAM$input$dataset       <- "./datasets/competencia2_2022.csv.gz"
 PARAM$input$training      <- c( 202103 )
 PARAM$input$future        <- c( 202105 )
 
-PARAM$finalmodel$max_bin           <-     31
-PARAM$finalmodel$learning_rate     <-      0.0280015981   #0.0142501265
-PARAM$finalmodel$num_iterations    <-    328  #615
-PARAM$finalmodel$num_leaves        <-   1015  #784
-PARAM$finalmodel$min_data_in_leaf  <-   5542  #5628
-PARAM$finalmodel$feature_fraction  <-      0.7832319551  #0.8382482539
-PARAM$finalmodel$semilla           <- 102191
+PARAM$finalmodel$max_bin           <- 31
+PARAM$finalmodel$learning_rate     <- 0.0285841408901033   #0.0142501265
+PARAM$finalmodel$num_iterations    <- 234 #615
+PARAM$finalmodel$num_leaves        <- 880  #784
+PARAM$finalmodel$min_data_in_leaf  <- 6857  #5628
+PARAM$finalmodel$feature_fraction  <- 0.390601489450783  #0.8382482539
+PARAM$finalmodel$semilla           <- 318601
 
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
