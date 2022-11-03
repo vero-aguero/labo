@@ -19,12 +19,12 @@ require("lightgbm")
 
 #Parametros del script
 PARAM  <- list()
-PARAM$experimento <- "FE9250"
+PARAM$experimento <- "FE9254"
 
 PARAM$exp_input  <- "DR9141"
 
 PARAM$lag1  <- TRUE
-PARAM$lag2  <- FALSE
+PARAM$lag2  <- TRUE
 PARAM$Tendencias  <- TRUE
 PARAM$RandomForest  <- FALSE          #No se puede poner en TRUE para la entrega oficial de la Tercera Competencia
 PARAM$CanaritosAsesinos  <- FALSE
@@ -374,8 +374,8 @@ if( PARAM$Tendencias )
                       cols= cols_lagueables,
                       ventana=   6,      # 6 meses de historia
                       tendencia= TRUE,
-                      minimo=    FALSE,
-                      maximo=    FALSE,
+                      minimo=    TRUE,
+                      maximo=    TRUE,
                       promedio=  TRUE,
                       ratioavg=  FALSE,
                       ratiomax=  FALSE  )

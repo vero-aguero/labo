@@ -15,13 +15,13 @@ require("lightgbm")
 
 #Parametros del script
 PARAM  <- list()
-PARAM$experimento  <- "ZZ9420"
-PARAM$exp_input  <- "HT9420"
+PARAM$experimento  <- "ZZ9424"
+PARAM$exp_input  <- "HT9424"
 
 PARAM$modelos  <- 2
 # FIN Parametros del script
 
-ksemilla  <- 102191
+ksemilla  <- 318601
 
 #------------------------------------------------------------------------------
 options(error = function() { 
