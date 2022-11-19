@@ -27,10 +27,10 @@ function execute_script {
 }
 
 execute_script "z925_FE_historia"
-#execute_script "z931_training_strategy"
-#execute_script "z941_HT_lightgbm"
-#execute_script "z991_ZZ_lightgbm"
+execute_script "z932_training_strategy_under"
+execute_script "z942_HT_lightgbm_under"
+execute_script "z992_ZZ_lightgbm_under"
 
-send_message_to_telegram "Scripts finished successfully v2"
+send_message_to_telegram "Scripts finished successfully v4"
 
 poweroff_vm

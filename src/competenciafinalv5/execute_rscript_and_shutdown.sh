@@ -26,11 +26,11 @@ function execute_script {
      fi
 }
 
-execute_script "z925_FE_historia"
-#execute_script "z931_training_strategy"
-#execute_script "z941_HT_lightgbm"
-#execute_script "z991_ZZ_lightgbm"
+execute_script "FE_tercera_competencia"
+execute_script "Training_Strategy_tercera_competencia_20192021"
+execute_script "z942_HT_lightgbm_under_modificado_20192021"
+execute_script "z992_lightgbm_under_modificado_20192021"
 
-send_message_to_telegram "Scripts finished successfully v2"
+send_message_to_telegram "Scripts finished successfully v5"
 
 poweroff_vm
