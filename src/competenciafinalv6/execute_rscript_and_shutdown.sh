@@ -26,8 +26,8 @@ function execute_script {
      fi
 }
 
-execute_script "z906_reparar_dataset.r"
-execute_script "z914_corregir_drifting.r"
+#execute_script "z906_reparar_dataset"
+#execute_script "z914_corregir_drifting"
 execute_script "z925_FE_historia"
 execute_script "z932_training_strategy_under"
 execute_script "z942_HT_lightgbm_under"
