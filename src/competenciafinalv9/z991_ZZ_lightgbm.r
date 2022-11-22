@@ -3,7 +3,6 @@
 # 256 GB de espacio en el disco local
 #   8 vCPU
 
-# ZZ final que necesita de UNDERSAMPLING
 
 #limpio la memoria
 rm( list=ls() )  #remove all objects
@@ -15,13 +14,13 @@ require("lightgbm")
 
 #Parametros del script
 PARAM  <- list()
-PARAM$experimento  <- "ZZ9420_v3"
-PARAM$exp_input  <- "CompetenciaFinal/HT9420_v3"
+PARAM$experimento  <- "ZZ9410"
+PARAM$exp_input  <- "HT9410"
 
 PARAM$modelos  <- 2
 # FIN Parametros del script
 
-ksemilla  <- 318601
+ksemilla  <- 102191
 
 #------------------------------------------------------------------------------
 options(error = function() { 
@@ -36,8 +35,8 @@ options(error = function() {
 base_dir <- "~/buckets/b1/"
 
 #creo la carpeta donde va el experimento
-dir.create( paste0( base_dir, "exp/CompetenciaFinal/", PARAM$experimento, "/"), showWarnings = FALSE )
-setwd(paste0( base_dir, "exp/CompetenciaFinal/", PARAM$experimento, "/"))   #Establezco el Working Directory DEL EXPERIMENTO
+dir.create( paste0( base_dir, "exp/", PARAM$experimento, "/"), showWarnings = FALSE )
+setwd(paste0( base_dir, "exp/", PARAM$experimento, "/"))   #Establezco el Working Directory DEL EXPERIMENTO
 
 #leo la salida de la optimizaciob bayesiana
 arch_log  <- paste0( base_dir, "exp/", PARAM$exp_input, "/BO_log.txt" )
@@ -94,19 +93,6 @@ for( i in  1:PARAM$modelos )
   parametros$estimulos    <- NULL
   parametros$ganancia     <- NULL
   parametros$iteracion_bayesiana  <- NULL
-
-  if( ! ("leaf_size_log" %in% names(parametros) ) )  stop( "El Hyperparameter Tuning debe tener en BO_log.txt  el pseudo hiperparametro  lead_size_log.\n" )
-  if( ! ("coverage" %in% names(parametros) ) ) stop( "El Hyperparameter Tuning debe tener en BO_log.txt  el pseudo hiperparametro  coverage.\n" )
-  
-  #Primero defino el tamaño de las hojas
-  parametros$min_data_in_leaf  <- pmax( 1,  round( nrow(dtrain) / ( 2.0 ^ parametros$leaf_size_log ))  )
-  #Luego la cantidad de hojas en funcion del valor anterior, el coverage, y la cantidad de registros
-  parametros$num_leaves  <-  pmin( 131072, pmax( 2,  round( parametros$coverage * nrow( dtrain ) / parametros$min_data_in_leaf ) ) )
-  cat( "min_data_in_leaf:", parametros$min_data_in_leaf,  ",  num_leaves:", parametros$num_leaves, "\n" )
-
-  #ya no me hacen falta
-  parametros$leaf_size_log  <- NULL
-  parametros$coverage  <- NULL
 
   #Utilizo la semilla definida en este script
   parametros$seed  <- ksemilla
