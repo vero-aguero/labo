@@ -15,7 +15,7 @@ require("lightgbm")
 
 #Parametros del script
 PARAM  <- list()
-PARAM$experimento  <- "CompetenciaFinal/ZZ9420_v4"
+PARAM$experimento  <- "ZZ9420_v4"
 PARAM$exp_input  <- "CompetenciaFinal/HT9420_v4"
 
 PARAM$modelos  <- 2
@@ -36,8 +36,8 @@ options(error = function() {
 base_dir <- "~/buckets/b1/"
 
 #creo la carpeta donde va el experimento
-dir.create( paste0( base_dir, "exp/", PARAM$experimento, "/"), showWarnings = FALSE )
-setwd(paste0( base_dir, "exp/", PARAM$experimento, "/"))   #Establezco el Working Directory DEL EXPERIMENTO
+dir.create( paste0( base_dir, "exp/CompetenciaFinal/", PARAM$experimento, "/"), showWarnings = FALSE )
+setwd(paste0( base_dir, "exp/CompetenciaFinal/", PARAM$experimento, "/"))   #Establezco el Working Directory DEL EXPERIMENTO
 
 #leo la salida de la optimizaciob bayesiana
 arch_log  <- paste0( base_dir, "exp/", PARAM$exp_input, "/BO_log.txt" )

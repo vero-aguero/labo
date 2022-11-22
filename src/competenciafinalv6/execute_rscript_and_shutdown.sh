@@ -19,7 +19,7 @@ function execute_script {
      SCRIPT_NAME=$1
      echo "`date`> Ejecutando ${SCRIPT_NAME}.r"
      time Rscript ${SCRIPT_NAME}.r > ${SCRIPT_NAME}.log 2>&1
-     output = $?
+     output=$?
      if [[ ${output} -ge 1 ]]; then
           send_message_to_telegram "Script Failed: ${SCRIPT_NAME}"
           poweroff_vm
@@ -28,8 +28,8 @@ function execute_script {
 
 #execute_script "z906_reparar_dataset"
 #execute_script "z914_corregir_drifting"
-execute_script "z925_FE_historia"
-execute_script "z932_training_strategy_under"
+#execute_script "z925_FE_historia"
+#execute_script "z932_training_strategy_under"
 execute_script "z942_HT_lightgbm_under"
 execute_script "z992_ZZ_lightgbm_under"
 
