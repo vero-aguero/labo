@@ -26,8 +26,8 @@ function execute_script {
      fi
 }
 
-execute_script "z992_ZZ_lightgbm_under_semillerio_1_m2"
+execute_script "z992_ZZ_lightgbm_under_semillerio_1_m5"
 
-send_message_to_telegram "Scripts finished successfully Semillero Modelo 6 2do BO 50 semillas Parte 1"
+send_message_to_telegram "Scripts finished successfully Semillero Modelo 5 1er BO 50 semillas Parte 1"
 
 poweroff_vm
