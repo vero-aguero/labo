@@ -20,11 +20,11 @@ PARAM$experimento <- "ZZ9410_semillerio_ensamble_modelo5_50semillas"
 PARAM$exp_input <- "CompetenciaFinal/HT9420_v11"
 
 # PARAM$modelos  <- 2
-PARAM$modelo <- 1 # se usa el mejor de la OB, pero a futuro podria variar esto
+PARAM$modelo <- 2 # se usa el mejor de la OB, pero a futuro podria variar esto
 PARAM$semilla_primos <- 878131
 PARAM$semillerio <- 50 # ¿De cuanto será nuestro semillerio?
 PARAM$indice_inicio_semilla <- 1
-PARAM$indice_fin_semilla <- 18
+PARAM$indice_fin_semilla <- 50
 # FIN Parametros del script
 
 # genero un vector de una cantidad de PARAM$semillerio  de semillas,  buscando numeros primos al azar
